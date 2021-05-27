@@ -276,7 +276,7 @@ static void fotg210_enable_dma(struct fotg210_ep *ep,
 	/* set DMA memory address */
 	iowrite32(d, fotg210->reg + FOTG210_DMACPSR2);
 
-	/* enable MDMA_EROR and MDMA_CMPLT interrupt */
+	/* enable MDMA_ERROR and MDMA_CMPLT interrupt */
 	value = ioread32(fotg210->reg + FOTG210_DMISGR2);
 	value &= ~(DMISGR2_MDMA_CMPLT | DMISGR2_MDMA_ERROR);
 	iowrite32(value, fotg210->reg + FOTG210_DMISGR2);
